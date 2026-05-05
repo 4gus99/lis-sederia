@@ -137,18 +137,19 @@ export default function App() {
 
       <main>
         {/* HERO */}
-        <section className="relative min-h-[90vh] bg-green-dark flex items-center justify-center overflow-hidden pt-20">
-          <div className="absolute inset-0 opacity-40">
+        <section className="relative min-h-[90vh] md:min-h-screen bg-green-dark flex items-center justify-center overflow-hidden pt-20">
+          <div className="absolute inset-0">
             <img 
-              src="lis_sederia_hero_textiles.png" 
-              alt="Lis Sedería Hero" 
-              className="w-full h-full object-cover"
+              src="/hero.png" 
+              alt="Telas, hilos, botones y mercería fina de Lis Sedería" 
+              className="w-full h-full object-cover object-center opacity-75 scale-[1.02]"
               onError={(e) => {
-                (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&q=80&w=2000';
+                (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&q=80&w=2000';
               }}
             />
           </div>
-          <div className="absolute inset-0 bg-gradient-to-b from-green-dark/60 via-green-dark/40 to-green-dark/60"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-green-dark/80 via-green-dark/35 to-green-dark/80"></div>
+          <div className="absolute inset-0 bg-green-dark/20"></div>
           
           <div className="relative z-10 container mx-auto px-6 text-center">
             <motion.div
@@ -157,21 +158,28 @@ export default function App() {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-gold font-brand text-6xl md:text-8xl lg:text-9xl mb-4 normal-case leading-none">
-  Lis Sedería
-</h2>
-              <h3 className="text-cream font-serif text-3xl md:text-5xl lg:text-6xl mb-6 tracking-tight leading-tight max-w-4xl mx-auto">
-                TU HOGAR ARTESANAL<br />EN USHUAIA
+                Lis Sedería
+              </h2>
+              <h3 className="text-cream font-serif text-3xl md:text-5xl lg:text-6xl mb-6 tracking-tight leading-tight max-w-5xl mx-auto">
+                TELAS Y MERCERÍA FINA<br />EN USHUAIA
               </h3>
-              <p className="text-cream/80 max-w-2xl mx-auto mb-10 text-lg md:text-xl font-light">
-                Descubre la elegancia en cada puntada.<br />
-                Telas exclusivas y mercería fina.
+              <p className="text-cream/85 max-w-2xl mx-auto mb-10 text-lg md:text-xl font-light leading-relaxed">
+                Telas, lanas, hilos, botones, cierres, patrones y talleres<br className="hidden md:block" /> para acompañar cada proyecto creativo.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a 
                   href="#telas" 
-                  className="bg-cream text-text-dark font-sans px-6 py-2 rounded-full font-bold uppercase tracking-widest text-xs hover:bg-gold-light transition-all shadow-md"
+                  className="bg-cream text-text-dark font-sans px-7 py-3 rounded-full font-bold uppercase tracking-widest text-xs hover:bg-gold-light hover:-translate-y-0.5 transition-all shadow-md"
                 >
                   Explorar Colección
+                </a>
+                <a 
+                  href={getWhatsAppLink("Hola, vi la página de Lis Sedería y quiero hacer una consulta.")}
+                  className="border border-gold/60 text-cream font-sans px-7 py-3 rounded-full font-bold uppercase tracking-widest text-xs hover:bg-gold hover:text-green-dark hover:-translate-y-0.5 transition-all"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Consultar por WhatsApp
                 </a>
               </div>
             </motion.div>
