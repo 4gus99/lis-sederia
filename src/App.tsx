@@ -139,14 +139,17 @@ export default function App() {
         {/* HERO */}
         <section className="relative min-h-[90vh] md:min-h-screen bg-green-dark flex items-center justify-center overflow-hidden pt-20">
           <div className="absolute inset-0">
-            <img 
-              src="/hero.png" 
-              alt="Telas, hilos, botones y mercería fina de Lis Sedería" 
-              className="w-full h-full object-cover object-center opacity-75 scale-[1.02]"
-              onError={(e) => {
-                (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&q=80&w=2000';
-              }}
-            />
+            <picture>
+              <source media="(max-width: 767px)" srcSet="/hero-mobile.png" />
+              <img 
+                src="/hero.png" 
+                alt="Telas, hilos, botones y mercería fina de Lis Sedería" 
+                className="w-full h-full object-cover object-center opacity-75 md:opacity-75 scale-[1.02]"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&q=80&w=2000';
+                }}
+              />
+            </picture>
           </div>
           <div className="absolute inset-0 bg-gradient-to-b from-green-dark/80 via-green-dark/35 to-green-dark/80"></div>
           <div className="absolute inset-0 bg-green-dark/20"></div>
@@ -597,12 +600,12 @@ export default function App() {
       {/* Floating WhatsApp Button */}
       <a 
         href={WHATSAPP_BASE_URL}
-        className="fixed bottom-8 right-8 z-[60] bg-green-500 text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform active:scale-95 flex items-center justify-center border-2 border-white/20"
+        className="fixed bottom-5 right-5 md:bottom-8 md:right-8 z-[60] bg-green-500 text-white p-3 md:p-4 rounded-full shadow-2xl hover:scale-110 transition-transform active:scale-95 flex items-center justify-center border-2 border-white/20"
         aria-label="Contact on WhatsApp"
         target="_blank"
         rel="noopener noreferrer"
       >
-        <MessageCircle size={32} />
+        <MessageCircle className="w-7 h-7 md:w-8 md:h-8" />
       </a>
     </div>
   );
