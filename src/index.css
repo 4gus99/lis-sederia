@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Carattere&family=Cormorant+Garamond:wght@400;500;600;700&family=Nunito:wght@400;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-brand: "Carattere", cursive;
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Nunito", sans-serif;
+
+  --color-green-deep: #071710;
+  --color-green-dark: #0D241A;
+  --color-green-bottle: #113D2A;
+  --color-cream: #F6F1E8;
+  --color-beige: #EFE5D2;
+  --color-rose: #CFA7A0;
+  --color-gold: #C8B48A;
+  --color-gold-light: #E8D5A4;
+  --color-text-dark: #1E241F;
+}
+
+@layer base {
+  body {
+    @apply bg-cream text-text-dark font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4 {
+    @apply font-serif;
+  }
+}
+
+.gold-glitter {
+  background-image: radial-gradient(circle, rgba(200, 180, 138, 0.4) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.rose-shadow {
+  position: relative;
+}
+
+.rose-shadow::before {
+  content: '';
+  position: absolute;
+  top: -24px;
+  left: -24px;
+  width: 120px;
+  height: 120px;
+  background-color: var(--color-rose);
+  z-index: -1;
+  opacity: 0.8;
+}
+
+.rose-shadow-right::before {
+  left: auto;
+  right: -24px;
+}
